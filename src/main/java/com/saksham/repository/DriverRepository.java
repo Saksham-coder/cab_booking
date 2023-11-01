@@ -7,9 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface DriverRepository extends JpaRepository<Driver, Integer> {
     public Driver findByEmail(String email);
+    public Optional<Driver> findById(Integer id);
 
     @Query("SELECT R FROM Ride R WHERE R.status=REQUESTED AND R.driver.id=:driverId")
     public List<Ride> getAllocatedRides(@Param("driverId") Integer driverId);

@@ -171,13 +171,13 @@ public class DriverServiceImplementation implements DriverService {
 
     @Override
     public List<Ride> getAllocatedRides(Integer driverId) throws DriverException {
-        List<Ride> allocatedRides=driverRepository.getAllocatedRides(driverId);
+        List<Ride> allocatedRides= driverRepository.getAllocatedRides(driverId);
         return allocatedRides;
     }
 
     @Override
     public Driver findDriverById(Integer driverId) throws DriverException {
-        Optional<Driver> opt=driverRepository.findById(driverId);
+        Optional<Driver> opt = driverRepository.findById(driverId);
         if(opt.isPresent()) {
             return opt.get();
         }
@@ -186,7 +186,7 @@ public class DriverServiceImplementation implements DriverService {
 
     @Override
     public List<Ride> completedRides(Integer driverId) throws DriverException {
-        List <Ride> completedRides=driverRepository.getCompletedRides(driverId);
+        List <Ride> completedRides = driverRepository.getCompletedRides(driverId);
         return completedRides;
     }
 }
