@@ -2,5 +2,8 @@ package com.saksham.domain;
 
 public enum RideStatus {
     COMPLETED,
-    REQUESTED
+    REQUESTED,
+    ACCEPTED,
+    STARTED,
+    CANCELLED
 }
